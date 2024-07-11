@@ -1,4 +1,12 @@
 <script setup>
+import { ref, reactive } from 'vue'
+import { db } from './data/guitarras'
+
+const state = reactive({
+    guitarras: db
+})
+
+console.log(state.guitarras)
 
 </script>
 
@@ -30,8 +38,7 @@
                                 <tbody>
                                     <tr>
                                         <td>
-                                            <img class="img-fluid" src="/img/guitarra_02.jpg"
-                                                alt="imagen guitarra">
+                                            <img class="img-fluid" src="/img/guitarra_02.jpg" alt="imagen guitarra">
                                         </td>
                                         <td>SRV</td>
                                         <td class="fw-bold">
