@@ -17,8 +17,8 @@ Vue.js is a versatile and approachable JavaScript framework that enables develop
 Below is a structured outline of the steps and topics covered in this course:
 
 1. Introduction to JavaScript
-
-
+2. Project GuitarLA -> (Despliegue en Netlify : https://candid-centaur-a96583.netlify.app/)
+   
 ## Links Used
 
 - [Official Vue.js Website](https://vuejs.org/)
