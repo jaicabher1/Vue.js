@@ -11,7 +11,7 @@ const submitChat = async () => {
   chatInput.value = ''
   const inputMessage = { role: 'user', content }
   messages.value.push(inputMessage)
-  const response = await ollama.chat({ model: 'gemma:2b', messages: [inputMessage], stream: true })
+  const response = await ollama.chat({ model: 'ipe', messages: [inputMessage], stream: true })
   for await (const part of response) {
     currentOutputMessageContent.value += part.message.content
   }
