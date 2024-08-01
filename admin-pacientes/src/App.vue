@@ -52,6 +52,11 @@ const editarPaciente = (id) => {
   const pacienteEditar = pacientes.value.filter(paciente => paciente.id === id)[0];
   Object.assign(paciente, pacienteEditar);
 }
+
+const eliminarPaciente = (id) => {
+  //Eliminar paciente del arreglo
+  pacientes.value = pacientes.value.filter(paciente => paciente.id !== id);
+}
 </script>
 
 <template>
@@ -61,7 +66,7 @@ const editarPaciente = (id) => {
     <div class="mt:12 md:flex">
       <Formulario v-model:nombre="paciente.nombre" v-model:propietario="paciente.propietario"
         v-model:email="paciente.email" v-model:alta="paciente.alta" v-model:sintomas="paciente.sintomas"
-        @guardar-paciente="guardarPacientes" />
+        @guardar-paciente="guardarPacientes" :id="paciente.id" />
 
       <div class="md:w-1/2 md:h-screen overflow-y-scroll">
         <h3 class="font-black text-3xl text-center">
@@ -73,9 +78,7 @@ const editarPaciente = (id) => {
             Información de tus
             <span class="text-indigo-600 font-bold">Pacientes</span>
           </p>
-          <Paciente v-for="paciente in pacientes" :paciente="paciente" @editar-paciente="editarPaciente" />
-
-
+          <Paciente v-for="paciente in pacientes" :paciente="paciente" @editar-paciente="editarPaciente" @eliminar-paciente="eliminarPaciente" />
 
         </div>
         <p v-else class="mt-10 text-2xl text-center">No hay pacientes aún</p>
