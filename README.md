@@ -18,6 +18,8 @@ Below is a structured outline of the steps and topics covered in this course:
 
 1. Introduction to JavaScript
 2. Project GuitarLA -> (Despliegue en Netlify : https://candid-centaur-a96583.netlify.app/)
+3. Project Patients Admin -> (Despliegue en Netlify : [https://candid-centaur-a96583.netlify.app/](https://moonlit-crumble-cbb164.netlify.app/))
+4. Ollama test
    
 ## Links Used
 
