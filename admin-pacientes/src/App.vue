@@ -1,5 +1,5 @@
 <script setup>
-import { ref, reactive } from "vue";
+import { ref, reactive, onMounted, watch } from "vue";
 import { uid } from "uid";
 import Header from "./components/Header.vue";
 import Formulario from "./components/Formulario.vue";
@@ -57,6 +57,28 @@ const eliminarPaciente = (id) => {
   //Eliminar paciente del arreglo
   pacientes.value = pacientes.value.filter(paciente => paciente.id !== id);
 }
+
+//Pacientes Persistentes
+watch(pacientes, () => {
+    guardarLocalStorage()
+}, {
+    //Con el deep se observa los cambios en los objetos internos
+    deep: true
+})
+
+const guardarLocalStorage = () => {
+    localStorage.setItem('pacientes', JSON.stringify(pacientes.value))
+}
+
+onMounted(() => {
+    const pacientesStorage = localStorage.getItem('pacientes')
+    if (pacientesStorage) {
+      pacientes.value = JSON.parse(pacientesStorage)
+    }
+})
+
+
+
 </script>
 
 <template>
